@@ -2,9 +2,9 @@
 const FOV = 100,    // Field of view in degrees
     PI = 3.14159,
     // Color constants
-    ROAD_COLOR = "#999999",
-    MARKING_COLOR = "#ffd8FF",
-    SKY_COLOR = "#1e90ff",
+    ROAD_COLOR = '#999999',
+    MARKING_COLOR = '#ffd8FF',
+    SKY_COLOR = '#1e90ff',
     // Dimension/layout constants
     CAM_HEIGHT = 90,
     ROAD_WIDTH = 800,
@@ -23,8 +23,8 @@ var gameCanvas,       // Canvas element
     keys;             // Input handler
 
 function init() {
-    gameCanvas = document.getElementById("gameCanvas");
-    gameContext = gameCanvas.getContext("2d");
+    gameCanvas = document.getElementById('gameCanvas');
+    gameContext = gameCanvas.getContext('2d');
 
     // Calculate focal length from FOV
     focal = gameCanvas.width / 2 / Math.tan(FOV * Math.PI / 360);
@@ -130,22 +130,22 @@ function draw() {
 **************************************************/
 function setEventHandlers() {
     // Keyboard and mouse
-    window.addEventListener("keydown", onKeyDown, false);
-    window.addEventListener("keyup", onKeyUp, false);
+    window.addEventListener('keydown', onKeyDown, false);
+    window.addEventListener('keyup', onKeyUp, false);
 
     // Window resize
-    window.addEventListener("resize", onResize, false);
-};
+    window.addEventListener('resize', onResize, false);
+}
 
 // Keyboard key down
 function onKeyDown(e) {
     keys.onKeyDown(e);
-};
+}
 
 // Keyboard key up
 function onKeyUp(e) {
     keys.onKeyUp(e);
-};
+}
 
 // Browser window resize
 function onResize(e) {
@@ -153,7 +153,7 @@ function onResize(e) {
     gameCanvas.width = window.innerWidth;
     gameCanvas.height = window.innerHeight;
     focal = gameCanvas.width / 2 / Math.tan(FOV * Math.PI / 360);
-};
+}
 
 /**************************************************
 ** GAME HELPER FUNCTIONS
